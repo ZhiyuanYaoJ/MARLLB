@@ -1,15 +1,110 @@
 {
-    "ecmp": {
+    "maglev": {
         "init_lines": [
-            "sudo python3 baseline.py -g"
         ],
         "files": [
-            "baseline.py"
+        ],
+        "vpp_macro": [
+        ],
+        "img_id": "maglev",
+        "version": "dev"
+    },
+    "ecmp-classification-all": {
+        "init_lines": [
+            "sudo python3 ecmp.py -g -v"
+        ],
+        "files": [
+            "ecmp.py"
         ],
         "vpp_macro": [
             "#define LB_STATS"
         ],
-        "img_id": "ecmp"
+        "img_id": "ecmp-dev",
+        "version": "dev"
+    },
+    "ecmp-classification-partial": {
+        "init_lines": [
+            "sudo python3 ecmp.py -g -v"
+        ],
+        "files": [
+            "ecmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS"
+        ],
+        "img_id": "ecmp-deploy",
+        "version": "deploy"
+    },
+    "ecmp-microbench-all": {
+        "init_lines": [
+            "sudo python3 ecmp.py -g -v"
+        ],
+        "files": [
+            "ecmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS",
+            "#define LB_DEBUG"
+        ],
+        "img_id": "ecmp-dev-debug",
+        "version": "dev"
+    },
+    "ecmp-microbench-partial": {
+        "init_lines": [
+            "sudo python3 ecmp.py -g -v"
+        ],
+        "files": [
+            "ecmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS",
+            "#define LB_DEBUG"
+        ],
+        "img_id": "ecmp-deploy-debug",
+        "version": "deploy"
+    },
+    "ecmp": {
+        "init_lines": [
+            "sudo python3 ecmp.py -g"
+        ],
+        "files": [
+            "ecmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS"
+        ],
+        "img_id": "ecmp",
+        "version": "dev"
+    },
+    "active-wcmp": {
+        "init_lines": [
+            "sudo python3 wcmp.py -a -g & sleep 3;"
+        ],
+        "files": [
+            "wcmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS",
+            "#define LB_ALIAS",
+            "#define LB_MSG_IN"
+        ],
+        "img_id": "wcmp",
+        "version": "deploy"
+    },
+    "wcmp": {
+        "init_lines": [
+            "sudo python3 wcmp.py -g"
+        ],
+        "files": [
+            "wcmp.py"
+        ],
+        "vpp_macro": [
+            "#define LB_STATS",
+            "#define LB_ALIAS",
+            "#define LB_MSG_IN"
+        ],
+        "img_id": "wcmp",
+        "version": "deploy"
     },
     "lsq": {
         "init_lines": [

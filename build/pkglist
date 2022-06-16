@@ -1,0 +1,1 @@
+build-essential wget python3-setuptools vim htop tmux bzip2 ca-certificates locales fonts-liberation run-one qemu-utils uml-utilities bridge-utils qemu-system net-tools python-dev python-pip python-virtualenv netcat
